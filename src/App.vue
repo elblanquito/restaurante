@@ -132,31 +132,31 @@ function notificacion(){
 let data = ref([
   {
     nombre: "Empanada",
-    imagen: "./src/assets/empanada.png",
+    imagen: "../src/assets/empanada.png",
     precio: 5,
     cantidad: 1,
   },
   {
     nombre: "Hamburguesa",
-    imagen: "./src/assets/hamburguesa.png",
+    imagen: "../src/assets/hamburguesa.png",
     precio: 7,
     cantidad: 1,
   },
   {
     nombre: "Papa",
-    imagen: "./src/assets/papa.png",
+    imagen: "../src/assets/papa.png",
     precio: 5,
     cantidad: 1,
   },
   {
     nombre: "Pizza",
-    imagen: "./src/assets/pizza.png",
+    imagen: "../src/assets/pizza.png",
     precio: 6,
     cantidad: 1,
   },
   {
     nombre: "Taco",
-    imagen: "./src/assets/taco.png",
+    imagen: "../src/assets/taco.png",
     precio: 6,
     cantidad: 1,
   },
@@ -205,7 +205,7 @@ let carrito = ref([]);
   width: 100vw;
   font-size: 30px;
   text-align: center;
-  background-color: #884A39;
+  background-color: #C38154;
   border-bottom: solid 10px #F9E0BB;
   border-top: solid 10px #F9E0BB;
   padding: 10px;
