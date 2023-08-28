@@ -11,7 +11,7 @@
         
       </div>
       <button @click="abrir()" class="carritocont">
-        <img src="./assets/carrito.png" class="carrito">
+        <img src="./assets/carrito.png" class="carrito" >
         <div class="carritonoti" :class="{'noti':noti}"  v-if="carrito.length != 0">
           {{ carrito.reduce((total, item) => total + item.cantidad, 0) }}
         </div>
@@ -19,7 +19,7 @@
 
     </div>
 
-    <div v-show="lista" :class="{'listacontout':listaout}" class="listacont balancear ">
+    <div v-show="lista" :class="{'listacontout':listaout} " class="listacont balancear ">
         <p v-if="carrito.length === 0" class="lista">No hay productos seleccionados</p>
       <div class="lista" v-for="(p,i) in carrito" :key="i">
         <p class=" listap listanombre">{{ p.nombre }}</p>
@@ -166,19 +166,6 @@ let data = ref([
 let carrito = ref([]);
 
 
-//let stickyElement = document.querySelector('.listacont');
-//let distanceFromTop = stickyElement.getBoundingClientRect().top;
-
-/*   if (distanceFromTop <= 20) { // Cambia a 'fixed' después de desplazarse 20px desde arriba
-    stickyElement.style.position = 'fixed';
-    stickyElement.style.top = '20px';
-  } else {
-    stickyElement.style.position = 'relative'; // Vuelve a 'relative' mientras se desplaza hacia arriba
-    stickyElement.style.top = 'auto';
-  }
-
-//listacont */
-
 </script>
 
 
@@ -200,9 +187,9 @@ let carrito = ref([]);
 
 
 .menu {
-  position: fixed;
+  position: absolute;
   top: 0px;
-  width: 100vw;
+  width: calc(100vw - 37px);
   font-size: 30px;
   text-align: center;
   background-color: #C38154;
@@ -210,13 +197,15 @@ let carrito = ref([]);
   border-top: solid 10px #F9E0BB;
   padding: 10px;
   font-weight: bold;
+  
 }
 
 .carritocont {
   position: absolute;
   top: 10px;
-  right: 55px;
+  right: 15px;
   height: 57px;
+  transition: transform 0.2s ease-in;
 }
 
 .carrito {
@@ -266,6 +255,13 @@ let carrito = ref([]);
   margin-right: auto;
 
 }
+
+@media screen and (max-width: 710px) {
+  .productocont{
+    margin-top: 180px;
+  }
+}
+
 
 .producto{
   width: 300px;
@@ -396,7 +392,6 @@ let carrito = ref([]);
   position:absolute;
   right: 100px;
   top: 50px;
-
   z-index: 2;
   width: 400px;
   background-color: #C38154;
@@ -412,13 +407,17 @@ let carrito = ref([]);
   opacity: 0 ;
 }
 
-@media screen and (max-width: 527px) {
+@media screen and (max-width: 620px) {
   .listacont{
+    position: absolute;
+    left: 50%;
+    right: auto;
 
+    transform: translate(-50%);
     top: 90px;
-    right:auto;
-    margin-left: auto;
     width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
