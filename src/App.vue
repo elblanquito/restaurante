@@ -6,7 +6,7 @@
       <div>
         
         <p class="titulo">
-          productos disponibles
+          Productos disponibles
         </p>
         
       </div>
@@ -24,18 +24,18 @@
       <div class="lista" v-for="(p,i) in carrito" :key="i">
         <p class=" listap listanombre">{{ p.nombre }}</p>
         <img :src="p.imagen" class="listaimg">
-        <p class=" listap listaprecio"><b>precio:</b> ${{ p.precio }}</p>
+        <p class=" listap listaprecio"><b>Precio:</b> ${{ p.precio }}</p>
         <p class=" listap listacantidad">
-          <b>cantidad:</b>
+          <b>Cantidad:</b>
           {{ p.cantidad }}
         </p>
-        <p class=" listap listatotal"><b>total:</b> ${{ p.precio * p.cantidad }}</p>
+        <p class=" listap listatotal"><b>Total:</b> ${{ p.precio * p.cantidad }}</p>
         <button class="listap listabutton" @click="quitar(i)">❌</button>
       </div>
 
       
       <div v-if="carrito.length > 1" class="lista listapagar">
-        total de unidades:
+        Total de unidades:
         {{ carrito.reduce((total, item) => total + item.cantidad, 0) }}
         <br>
         Pagar:
@@ -49,12 +49,12 @@
       <div class="producto" v-for="(p,i) in data" :key="i">
         <img :src="p.imagen" class="productoimg">
         <p class=" productop productonombre">{{ p.nombre }}</p>
-        <p class=" productop productoprecio"><b>precio:</b> ${{ p.precio }}</p>
+        <p class=" productop productoprecio"><b>Precio:</b> ${{ p.precio }}</p>
         <p class=" productop productocantidad">
-          <b>cantidad:</b>
+          <b>Cantidad:</b>
           <input  class="productocantidadinput" type="number" min="1" v-model="p.cantidad">
         </p>
-        <p class=" productop productototal"><b>total:</b> ${{ p.precio * p.cantidad }}</p>
+        <p class=" productop productototal"><b>Total:</b> ${{ p.precio * p.cantidad }}</p>
         <button class="productop productobutton" @click="agregar(i)">agregar</button>
       </div>
     </div>
@@ -131,31 +131,31 @@ function notificacion(){
 
 let data = ref([
   {
-    nombre: "empanada",
+    nombre: "Empanada",
     imagen: "./src/assets/empanada.png",
     precio: 5,
     cantidad: 1,
   },
   {
-    nombre: "hamburguesa",
+    nombre: "Hamburguesa",
     imagen: "./src/assets/hamburguesa.png",
     precio: 7,
     cantidad: 1,
   },
   {
-    nombre: "papa",
+    nombre: "Papa",
     imagen: "./src/assets/papa.png",
     precio: 5,
     cantidad: 1,
   },
   {
-    nombre: "pizza",
+    nombre: "Pizza",
     imagen: "./src/assets/pizza.png",
     precio: 6,
     cantidad: 1,
   },
   {
-    nombre: "taco",
+    nombre: "Taco",
     imagen: "./src/assets/taco.png",
     precio: 6,
     cantidad: 1,
@@ -165,6 +165,19 @@ let data = ref([
 
 let carrito = ref([]);
 
+
+//let stickyElement = document.querySelector('.listacont');
+//let distanceFromTop = stickyElement.getBoundingClientRect().top;
+
+/*   if (distanceFromTop <= 20) { // Cambia a 'fixed' después de desplazarse 20px desde arriba
+    stickyElement.style.position = 'fixed';
+    stickyElement.style.top = '20px';
+  } else {
+    stickyElement.style.position = 'relative'; // Vuelve a 'relative' mientras se desplaza hacia arriba
+    stickyElement.style.top = 'auto';
+  }
+
+//listacont */
 
 </script>
 
