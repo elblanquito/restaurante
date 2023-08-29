@@ -67,6 +67,8 @@
 </template>
 
 <script setup>
+
+
 import { ref } from "vue";
 
 
@@ -127,36 +129,40 @@ function notificacion(){
 
 
 
-
+import Empanada_img from "../src/assets/empanada.png"
+import Hamburguesa from "../src/assets/hamburguesa.png"
+import papa_img from "../src/assets/papa.png"
+import pizza_img from "../src/assets/pizza.png"
+import taco_img from "../src/assets/taco.png"
 
 let data = ref([
   {
     nombre: "Empanada",
-    imagen: "../src/assets/empanada.png",
+    imagen: Empanada_img,
     precio: 5,
     cantidad: 1,
   },
   {
     nombre: "Hamburguesa",
-    imagen: "../src/assets/hamburguesa.png",
+    imagen: Hamburguesa,
     precio: 7,
     cantidad: 1,
   },
   {
     nombre: "Papa",
-    imagen: "../src/assets/papa.png",
+    imagen: papa_img,
     precio: 5,
     cantidad: 1,
   },
   {
     nombre: "Pizza",
-    imagen: "../src/assets/pizza.png",
+    imagen: pizza_img,
     precio: 6,
     cantidad: 1,
   },
   {
     nombre: "Taco",
-    imagen: "../src/assets/taco.png",
+    imagen: taco_img,
     precio: 6,
     cantidad: 1,
   },
